@@ -1,0 +1,31 @@
+{
+  "name": "guestbookapi",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Dodsaren/guestbookApi.git"
+  },
+  "keywords": [
+    "restful",
+    "api"
+  ],
+  "author": "Jim Nilsson",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Dodsaren/guestbookApi/issues"
+  },
+  "homepage": "https://github.com/Dodsaren/guestbookApi#readme",
+  "devDependencies": {
+    "nodemon": "^1.12.1"
+  },
+  "dependencies": {
+    "express": "^4.16.2",
+    "mongoose": "^4.13.4"
+  }
+}
