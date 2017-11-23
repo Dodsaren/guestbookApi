@@ -4,7 +4,7 @@ const mongoose = require('mongoose'),
       Comment = mongoose.model('Comments');
 
 exports.list = (req, res) => {
-  Comment.find({}, (err, comment) => {
+  Comment.find({}).sort('-createdDate').exec((err, comment) => {
     if (err) res.send(err);
     res.json(comment)
   });
