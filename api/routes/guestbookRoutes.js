@@ -3,7 +3,6 @@
 const guestbook = require('../controllers/guestbookController');
 
 module.exports = (app) => {
-  console.log(guestbook);
   app.route('/comments')
     .get(guestbook.list)
     .post(guestbook.add)

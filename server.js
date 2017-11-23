@@ -3,6 +3,7 @@ var express = require('express'),
     port = process.env.PORT || 3000,
     mongoose = require('mongoose'),
     Comment = require('./api/models/commentModel'),
+    cors = require('cors'),
     bodyParser = require('body-parser');
 
 mongoose.Promise = global.Promise;
@@ -10,6 +11,8 @@ mongoose.connect('mongodb://localhost/Guestbookdb', {
   useMongoClient: true
 });
 
+// cors({credentials: true, origin: true})
+app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json());
 
