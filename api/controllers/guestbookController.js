@@ -5,7 +5,7 @@ const mongoose = require('mongoose'),
 
 exports.list = (req, res) => {
   Comment.find({}).sort('-createdDate').exec((err, comment) => {
-    if (err) res.send(err);
+    if (err) return res.send(err);
     res.json(comment)
   });
 }
@@ -13,7 +13,7 @@ exports.list = (req, res) => {
 exports.add = (req, res) => {
   const comment = new Comment(req.body);
   Comment.create(comment, (err, created) => {
-    if (err) res.send(err);
+    if (err) return res.send(err);
     res.json(created)
   });
 }

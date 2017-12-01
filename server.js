@@ -15,6 +15,11 @@ mongoose.connect('mongodb://localhost/Guestbookdb', {
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json());
+app.use(function(req, res, next) {
+  console.log(req.originalUrl)
+  console.log(req.body)
+  next();
+});
 
 var routes = require('./api/routes/guestbookRoutes');
 routes(app);
